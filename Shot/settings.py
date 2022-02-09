@@ -137,3 +137,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # }
 
 # USER_AGENTS_CACHE = 'default'
+
+STATIC_ROOT = 'static/'
