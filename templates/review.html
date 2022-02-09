@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block body %} {% for message in messages %}
+<div class="alert alert-danger" role="alert">{{ message }}</div>
+{% endfor %}
+
+<div class="mx-0 mx-sm-auto">
+  <div class="card">
+    <div class="card-body">
+      <form class="px-2" method="POST" action="/reviews">
+        {% csrf_token %}
+        <p class="text-center">
+          <strong>How do you rate customer support:</strong>
+        </p>
+
+        <p class="text-center"><strong>What could we improve?</strong></p>
+
+        <!-- Message input -->
+        <div class="form-outline mb-4">
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            id="form4Example6"
+          />
+          <label class="form-label" for="form4Example6">Your name</label>
+        </div>
+        <div class="form-outline mb-4">
+          <textarea
+            class="form-control"
+            name="desc"
+            id="form4Example6"
+            rows="4"
+          ></textarea>
+          <label class="form-label" for="form4Example6">Your feedback</label>
+        </div>
+        <div class="card-footer text-end">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock body %}
